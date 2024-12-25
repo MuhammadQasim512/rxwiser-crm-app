@@ -3,7 +3,7 @@ import Header from "./components/header/Header";
 import Sidebar from "./components/sidebar/Sidebar";
 import Footer from "./components/footer/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import BusinessInfo from "./pages/BusinessInfo"; 
+import BusinessInfo from "./pages/BusinessInfo";
 import PractiseLocation from "./pages/PractiseLocation";
 import UserManagement from "./pages/UserManagement";
 import Practioners from "./pages/Practioners";
@@ -47,27 +47,27 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <Header />       
+        <Header />
         <main className="main" id="top">
-          <Sidebar />          
+          <Sidebar />
           <div className="content">
             <Routes>
              {/* <Route path="/" element={<Calender />} />  */}
-             
+
              {/* <Route path="/add" element={<AddContact />} />  */}
              <Route path="/client" element={<Client />} />
             <Route path="/shared" element={<Shared />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/referrers" element={<Referrer />} />
             <Route path="/third-party" element={<Third_party />} />
-            
-              <Route path="/business_info" element={<BusinessInfo />} /> 
+
+              <Route path="/business_info" element={<BusinessInfo />} />
               <Route path="/practise_location" element={<PractiseLocation />} />
               <Route path="/user_management" element={<UserManagement />} />
               <Route path="/select_practitioners" element={<Practioners />} />
               <Route path="/Search_options" element={<Searchoptions />} />
               <Route path="/Add_New_Modal" element={<AddNewModal />} />
-              
+
               <Route path="/notes" element={<Notes />} />
               <Route path="/profile_client" element={<ProfileClient />} />
               <Route path="/client_contact" element={<ClientContact />} />
@@ -82,8 +82,8 @@ function App() {
               <Route path="/invoices" element={<Invoices />} />
               <Route path="/create_invoice" element={<CreateInvoice />} />
               <Route path="/payment_received" element={<PaymentReceived />} />
-              
-              
+
+
               <Route path="/correspondence" element={<Correspondence />} />
               <Route path="/record_files" element={<Record_files />} />
               <Route path="/client_diagnoses" element={<Client_diagnoses />} />
@@ -95,7 +95,7 @@ function App() {
               <Route path="/admin_files" element={<Admin_files />} />
               <Route path="/admin_form" element={<Admin_form />} />
               <Route path="/admin_manage" element={<Admin_manage />} />
-              
+
             </Routes>
             <Footer />
           </div>
@@ -106,3 +106,4 @@ function App() {
 }
 
 export default App;
+//commit from mazhar side
