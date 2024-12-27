@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"
 
-const Admin_files = () => {
+const RecordFiles = () => {
     const [activeDropdown, setActiveDropdown] = useState(null); // Track the currently active dropdown
     const [isSidebarOpen, setSidebarOpen] = useState(false);
 
@@ -27,6 +27,7 @@ const Admin_files = () => {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
+
     return (
         <>
             <div className="dashboard">
@@ -253,7 +254,7 @@ const Admin_files = () => {
                                     New SMS
                                 </NavLink>
                                 <NavLink
-                                    to="/new_email"
+                                    to="new_email"
                                     className={({ isActive }) =>
                                         `dashboard-nav-dropdown-item ${isActive ? "active" : ""}`
                                     }>
@@ -288,7 +289,7 @@ const Admin_files = () => {
                                     Manage
                                 </NavLink>
                                 <NavLink
-                                    to="/admin_notes"
+                                    to="admin_notes"
                                     className={({ isActive }) =>
                                         `dashboard-nav-dropdown-item ${isActive ? "active" : ""}`
                                     }>
@@ -317,7 +318,7 @@ const Admin_files = () => {
                         <a href="#!" className="menu-toggle" onClick={toggleSidebar}>
                             <i className="fas fa-bars" />
                         </a>
-
+                     
                     </header>
                     <div className="dashboard-content">
                         <div className="card">
@@ -407,4 +408,4 @@ const Admin_files = () => {
         </>
     )
 }
-export default Admin_files;
+export default RecordFiles;

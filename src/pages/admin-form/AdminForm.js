@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom"
-
-const New_sms = () => {
+import { NavLink } from "react-router-dom";
 
 
+const AdminForm = () => {
     const [activeDropdown, setActiveDropdown] = useState(null); // Track the currently active dropdown
     const [isSidebarOpen, setSidebarOpen] = useState(false);
 
@@ -291,7 +290,7 @@ const New_sms = () => {
                                     Manage
                                 </NavLink>
                                 <NavLink
-                                    to="admin_notes"
+                                    to="/admin_notes"
                                     className={({ isActive }) =>
                                         `dashboard-nav-dropdown-item ${isActive ? "active" : ""}`
                                     }>
@@ -320,196 +319,151 @@ const New_sms = () => {
                         <a href="#!" className="menu-toggle" onClick={toggleSidebar}>
                             <i className="fas fa-bars" />
                         </a>
+                       
                     </header>
                     <div className="dashboard-content">
                         <div className="card">
-                            <div className="form-section-titles mt20">New SMS</div>
+                            <div className="form-section-titles mt20">Forms</div>
                             <hr />
-                            <div style={{ padding: 20, marginTop: "-6%" }}>
-                                <div className="panel-body bg-transparent msg-content">
-                                    <div className="panel-group">
-                                        <div id="tsx-client-message">
-                                            <form>
-                                                <div className="col-12">
-                                                    <div className="row mt-4">
-                                                        <div className="pl-0 pr-0 col-12 col-lg-6 offset-lg-3">
-                                                            <div>
-                                                                <div className="form-group row mb15 mt-2">
-                                                                    <label className="col-12 col-form-label pr0 pt0">
-                                                                        To
+                            <div className="panel-body">
+                                <div className="row mb15">
+                                    <div id="client-customForms-toolbar" className="col-12">
+                                        <div className="row align-items-center justify-content-between g-2 ">
+                                            <div className="col col-auto">
+                                                <div className="d-flex align-items-center">
+                                                    <div className="form-group has-search position-relative">
+                                                        <input
+                                                            type="text"
+                                                            className="form-control"
+                                                            placeholder="Filter..."
+                                                        />
+                                                        <svg
+                                                            className="svg-inline--fa fa-magnifying-glass form-control-feedback"
+                                                            aria-hidden="true"
+                                                            focusable="false"
+                                                            data-prefix="fas"
+                                                            data-icon="magnifying-glass"
+                                                            role="img"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            viewBox="0 0 512 512"
+                                                            data-fa-i2svg=""
+                                                        >
+                                                            <path
+                                                                fill="currentColor"
+                                                                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+                                                            />
+                                                        </svg>
+                                                        {/* <span class="fa fa-search form-control-feedback"></span> Font Awesome fontawesome.com */}
+                                                    </div>
+                                                    <div className="ml-4" style={{ marginLeft: '12px' }}>
+                                                        <button
+                                                            type="button"
+                                                            className="btn btn-primary"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#topSlideOutModal"
+                                                        >
+                                                            <svg
+                                                                className="svg-inline--fa fa-plus mr5"
+                                                                aria-hidden="true"
+                                                                focusable="false"
+                                                                data-prefix="fas"
+                                                                data-icon="plus"
+                                                                role="img"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 448 512"
+                                                                data-fa-i2svg=""
+                                                            >
+                                                                <path
+                                                                    fill="currentColor"
+                                                                    d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"
+                                                                />
+                                                            </svg>
+                                                            {/* <i class="fa fa-add mr5"></i> Font Awesome fontawesome.com */}
+                                                            <span>CREATE NEW</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="col-auto">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row mt-6">
+                                    <div
+                                        id="client-customForm-edit-ui-wrapper"
+                                        className="col-12 order-1"
+                                    >
+                                        <div
+                                            id="customForm-container-editor"
+                                            className="customForm-container-editor"
+                                        >
+                                            <div id="customForm-editor-scroll-wrapper">
+                                                <div id="client-customForm-editor">
+                                                    <div className="customForm-container mt-0">
+                                                        <div className="customForm-title-bar">
+                                                            <span className="customForm-title">CREATE NEW</span>
+                                                            <button className="close">
+                                                                <i className="fa fa-times" />
+                                                            </button>
+                                                            <span className="badge badge-info customForm-status text-uppercase fsize11 float-right mr-3">
+                                                                Edit Draft
+                                                            </span>
+                                                            <div className="customForm-tools float-right" />
+                                                        </div>
+                                                        <form style={{ padding: "16px" }}>
+                                                            <div className="customForm-edit-form">
+                                                                <div className="form-group row">
+                                                                    <label className="col-12 col-lg-3 col-form-label">
+                                                                        Date
                                                                     </label>
-                                                                    <div className="col-12 mt10">
-                                                                        {" "}
+                                                                    <div className="col-12 col-lg-5">
+                                                                        <div className="">
+                                                                            <div className="date bs-datepicker input-group">
+                                                                                <input type="date" id="messageDate" className="form-control" />
+
+                                                                                <div className="input-group-append input-group-addon">
+                                                                                   
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                        <form style={{ padding: "16px" }}>
+                                                            <div className="customForm-template-selector">
+                                                                <div className="form-group row mb-3">
+                                                                    <label className="col-12 col-lg-3 col-form-label">
+                                                                        Template
+                                                                    </label>
+                                                                    <div className="col-12 col-lg-5">
                                                                         <select
                                                                             className="form-select"
                                                                             aria-label="Default select example"
                                                                             style={{ fontSize: 12, color: "#707f94" }}
                                                                         >
-                                                                            <option value="">Select Recipient...</option>
-                                                                            <option value="">syed shah - 2340987651</option>
+                                                                            <option selected="selected" value="">
+                                                                                Prime Care Movers
+                                                                            </option>
                                                                         </select>
                                                                     </div>
-                                                                </div>
-                                                            </div>
-                                                            <div className="form-group row mb15">
-                                                                <label className="col-12 col-form-label pr0 pt0">
-                                                                    Related Appointment
-                                                                </label>
-                                                                <div className="col-12 mt10">
-                                                                    {" "}
-                                                                    <select
-                                                                        className="form-select"
-                                                                        aria-label="Default select example"
-                                                                        style={{ fontSize: 12, color: "#707f94" }}
-                                                                    >
-                                                                        Please Select an Appointment...
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div className="form-group row mb15">
-                                                                <label className="col-12 col-form-label pr0 pt0">
-                                                                    Template
-                                                                </label>
-                                                                <div className="col-12 mt10">
-                                                                    <select
-                                                                        className="form-select"
-                                                                        aria-label="Default select example"
-                                                                        style={{ fontSize: 12, color: "#707f94" }}
-                                                                    >
-                                                                        <option value={-1}>No templates</option>
-                                                                        <option value="">
-                                                                            (!) Appointment Created by User Notification To
-                                                                            Practitioner (SMS)
-                                                                        </option>
-                                                                        <option value="">
-                                                                            (!) Appointment Follow Up
-                                                                        </option>
-                                                                        <option value="">
-                                                                            (!) Appointment Reminder (SMS)
-                                                                        </option>
-                                                                        <option value="">
-                                                                            SMS Happy Birthday Template
-                                                                        </option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div className="form-group row mt-2">
-                                                                <label className="col-sm-9 col-12 col-form-label pr0">
-                                                                    Save to the{" "}
-                                                                    <span
-                                                                        className="has-tooltip"
-                                                                        data-toggle="tooltip"
-                                                                        data-original-title="Keep a record of this message beyond 1 year."
-                                                                    >
-                                                                        Permanent
-                                                                    </span>
-                                                                    Correspondence Record
-                                                                </label>
-                                                                <div className="text-left col-sm-2 col-12">
-                                                                    <div className="mt5">
-                                                                        <div className="form-check form-switch d-flex align-items-center">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                role="switch"
-                                                                                id="switchClient"
-                                                                                defaultChecked=""
-                                                                            />
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="row mt-4">
-                                                        <div className="pl-0 pr-0 col-lg-6 offset-lg-3">
-                                                            <div className="">
-                                                                <textarea
-                                                                    className="form-control"
-                                                                    rows={10}
-                                                                    defaultValue={""}
-                                                                />
-                                                            </div>
-                                                            <div className="row mt-4">
-                                                                <div className="col-auto text-left pr-0">
-                                                                    <div>
+                                                                    <div className="col-12 col-lg-4 pl-lg-0 choose-date-link">
                                                                         <a
-                                                                            id="estimated-sms-number"
-                                                                            className="text-primary fsize12 semibold pr5"
-                                                                            target="_blank"
-                                                                            href='#"'
-                                                                            data-original-title="This is an estimate of the number of standard text messages required to send this SMS. Please note that if emojis are used, this may be more."
-                                                                            data-placement="top"
+                                                                            href="#"
+                                                                            className="text-primary"
+                                                                            style={{ fontSize: 13, fontWeight: 700 }}
                                                                         >
-                                                                            Estimated number of messages:
+                                                                            Manage templates
                                                                         </a>
-                                                                        <span
-                                                                            className="badge badge-secondary"
-                                                                            title="Number of standard text messages required for this message."
-                                                                        >
-                                                                            0
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="mt-4">
-                                                                    <div className="d-flex">
-                                                                        <div className="ml-auto">
-                                                                            <button
-                                                                                type="submit"
-                                                                                id="action-save-contact"
-                                                                                className="btn btn-success shadow w50 mr5 mb5 action-form"
-                                                                            >
-                                                                                <svg
-                                                                                    className="svg-inline--fa fa-check mr5"
-                                                                                    aria-hidden="true"
-                                                                                    focusable="false"
-                                                                                    data-prefix="fas"
-                                                                                    data-icon="check"
-                                                                                    role="img"
-                                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                                    viewBox="0 0 448 512"
-                                                                                    data-fa-i2svg=""
-                                                                                >
-                                                                                    <path
-                                                                                        fill="currentColor"
-                                                                                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
-                                                                                    ></path>
-                                                                                </svg>
-                                                                                {/* <i class="fa fa-margin fa-check mr5"></i> Font Awesome fontawesome.com */}
-                                                                                Save as DRAFT
-                                                                            </button>
-                                                                            <button
-                                                                                type="submit"
-                                                                                id="action-save-contact"
-                                                                                className="btn btn-success shadow w50 mr5 mb5 action-form"
-                                                                            >
-                                                                                <svg
-                                                                                    className="svg-inline--fa fa-check mr5"
-                                                                                    aria-hidden="true"
-                                                                                    focusable="false"
-                                                                                    data-prefix="fas"
-                                                                                    data-icon="check"
-                                                                                    role="img"
-                                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                                    viewBox="0 0 448 512"
-                                                                                    data-fa-i2svg=""
-                                                                                >
-                                                                                    <path
-                                                                                        fill="currentColor"
-                                                                                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
-                                                                                    ></path>
-                                                                                </svg>
-                                                                                {/* <i class="fa fa-margin fa-check mr5"></i> Font Awesome fontawesome.com */}
-                                                                                SAVE AND SEND
-                                                                            </button>
-                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </form>
                                                     </div>
                                                 </div>
-                                            </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -522,4 +476,4 @@ const New_sms = () => {
         </>
     )
 }
-export default New_sms;
+export default AdminForm;

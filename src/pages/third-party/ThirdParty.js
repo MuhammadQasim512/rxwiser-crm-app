@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Nav, NavItem, NavLink, TabContent, TabPane, Row,} from 'reactstrap';
 
-const Third_party = () => {
+const ThirdParty = () => {
   const [activeTab, setActiveTab] = useState('1'); // Initial active tab is Tab 1
 
   const toggleTab = (tab) => {
@@ -1693,4 +1693,4 @@ const Third_party = () => {
     </>
   )
 }
-export default Third_party;
+export default ThirdParty;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Modal, ModalBody } from "reactstrap";
 import { NavLink } from "react-router-dom"
 
-export default function Communication_activity() {
+export default function CommunicationActivity() {
 
     const [activeDropdown, setActiveDropdown] = useState(null); // Track the currently active dropdown
     const [isSidebarOpen, setSidebarOpen] = useState(false);

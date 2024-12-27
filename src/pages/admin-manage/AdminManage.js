@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom"
 
 
-const Admin_manage = () => {
+const AdminManage = () => {
     const [activeDropdown, setActiveDropdown] = useState(null); // Track the currently active dropdown
     const [isSidebarOpen, setSidebarOpen] = useState(false);
 
@@ -812,4 +812,4 @@ const Admin_manage = () => {
         </>
     )
 }
-export default Admin_manage;
+export default AdminManage;
